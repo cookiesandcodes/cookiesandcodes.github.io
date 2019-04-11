@@ -17,4 +17,4 @@ const options = {
 transloadit.createAssembly(options, (err, result) => {
   if (err) {
     throw err
-  }
+  }}
