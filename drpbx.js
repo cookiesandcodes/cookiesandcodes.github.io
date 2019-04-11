@@ -1,6 +1,3 @@
-// npm install transloadit --save
-const TransloaditClient = require('transloadit')
-
 const transloadit = new TransloaditClient({
   authKey: 'dfc86e53b40c4add9db37be5f120ad77',
   authSecret: '7b900bd25f364523a71e4fb50ae5a5aeb4750c0f'
