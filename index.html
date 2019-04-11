@@ -1,1 +1,38 @@
-"Hello World" 
+<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=0>
+<TR>
+<TD ALIGN="center"><a style="width:28px;text-decoration:none" href="cmmd=1800&1C02" target="_self"><font style="font-size:11px; color: #FFF;" face="Arial">&nbsp; &nbsp;</font></a></TD>
+<TD ALIGN="center">&nbsp;</TD>
+<TD ALIGN="center">&nbsp;</TD>
+</TR>
+<TR>
+
+<TD colspan="3">
+<SCRIPT LANGUAGE="JavaScript">var isopen = 1174975860;
+var timerval=60;
+function loadnextimage(){
+	isopen++;
+	tmpimage.src="http://192.168.0.13:23066/image.jpg?cachebust="+isopen+"&a=0";
+}
+
+function setuptimer(){
+	setTimeout("loadnextimage()", timerval); }
+
+var isopen=Math.round(1000000+(Math.random() * 1000000));
+tmpimage = new Image();
+var first = 1;
+
+function doimage() {
+	document.images.webcam.src=tmpimage.src;
+	setuptimer();
+}
+
+function firstimage() { if (first == 1) { first=0; isopen++; tmpimage.onload=doimage; tmpimage.onerror=doimage; tmpimage.src="http://192.168.0.13:23066/image.jpg?cachebust="+isopen+"&a=0"; } }
+document.write('<A HREF="http://192.168.0.13:23066/image.jpg" target=_blank><IMG border=0 SRC="http://192.168.0.13:23066/image.jpg?cachebust='+isopen+'&a=0" name=webcam onload="firstimage()"></A>');
+</SCRIPT>
+</TD>
+</TR>
+      <tr>
+      <td height="32" colspan="3" align="center" bgcolor="#D0E1F5" class="button">
+      <input type="button" width="75" value="Refresh" class="btnNormal" onClick="document.location.reload()"></td>
+      </tr>
+</TABLE>
