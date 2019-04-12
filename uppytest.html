@@ -1,0 +1,37 @@
+<link href="https://transloadit.edgly.net/releases/uppy/v0.27.4/dist/uppy.min.css" rel="stylesheet">
+<script src="https://transloadit.edgly.net/releases/uppy/v0.27.4/dist/uppy.min.js"></script>
+
+<button id="uppy-open-modal">Select Files</button>
+<script>
+  const uppy = Uppy.Core({ debug: true, autoProceed: false })
+    .use(Uppy.Transloadit, {
+      params: {
+        auth: {
+          // To avoid tampering use signatures:
+          // https://transloadit.com/docs/api/#authentication
+          key: 'dfc86e53b40c4add9db37be5f120ad77'
+        },
+        template_id: '88c2565e31dd405ab330ccbfd92ae03f'
+      },
+      waitForEncoding: true
+    })
+    .use(Uppy.Dashboard, {
+      trigger: '#uppy-open-modal',
+      target: 'body'
+    })
+    .use(Uppy.Webcam, { target: Uppy.Dashboard })
+    .use(Uppy.Instagram, {
+      target: Uppy.Dashboard,
+      serverUrl: 'https://api2.transloadit.com/companion',
+      serverPattern: '.transloadit.com$'
+    })
+    .use(Uppy.Url, {
+      target: Uppy.Dashboard,
+      serverUrl: 'https://api2.transloadit.com/companion',
+      serverPattern: '.transloadit.com$'
+    })
+    .on('transloadit:result', (stepName, result) => {
+      // use transloadit encoding result here.
+      console.log('Result here ====>', stepName, result)
+    })
+</script>

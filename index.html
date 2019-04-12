@@ -12,7 +12,7 @@
 var timerval=60;
 function loadnextimage(){
 	isopen++;
-	tmpimage.src="http://192.168.0.13:23066/image.jpg?cachebust="+isopen+"&a=0";
+	tmpimage.src="http://192.168.1.126:23066/image.jpg?cachebust="+isopen+"&a=0";
 }
 
 function setuptimer(){
@@ -27,8 +27,8 @@ function doimage() {
 	setuptimer();
 }
 
-function firstimage() { if (first == 1) { first=0; isopen++; tmpimage.onload=doimage; tmpimage.onerror=doimage; tmpimage.src="http://192.168.0.13:23066/image.jpg?cachebust="+isopen+"&a=0"; } }
-document.write('<A HREF="http://192.168.0.13:23066/image.jpg" target=_blank><IMG border=0 SRC="http://192.168.0.13:23066/image.jpg?cachebust='+isopen+'&a=0" name=webcam onload="firstimage()"></A>');
+function firstimage() { if (first == 1) { first=0; isopen++; tmpimage.onload=doimage; tmpimage.onerror=doimage; tmpimage.src="http://192.168.1.126:23066/image.jpg?cachebust="+isopen+"&a=0"; } }
+document.write('<A HREF="http://192.168.1.126:23066/image.jpg" target=_blank><IMG border=0 SRC="http://192.168.1.126:23066/image.jpg?cachebust='+isopen+'&a=0" name=webcam onload="firstimage()"></A>');
 </SCRIPT>
 </TD>
 </TR>
